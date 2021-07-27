@@ -27,7 +27,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)Packages\SFML-2.5.1\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Packages\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(ProjectName)\lib\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -144,9 +145,35 @@
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EngineMain.cpp" />
+    <ClCompile Include="Interface\Button.cpp" />
+    <ClCompile Include="Interface\ButtonMap.cpp" />
+    <ClCompile Include="Interface\MainCamera.cpp" />
+    <ClCompile Include="Interface\PauseMenu.cpp" />
+    <ClCompile Include="Interface\States.cpp" />
+    <ClCompile Include="Systems\AnimationSystem.cpp" />
+    <ClCompile Include="Systems\InputSystem.cpp" />
+    <ClCompile Include="Systems\MovementSystem.cpp" />
+    <ClCompile Include="Systems\PhysicsSystem.cpp" />
+    <ClCompile Include="Systems\RenderingSystem.cpp" />
+    <ClCompile Include="Systems\TileMapSystem.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components.h" />
+    <ClInclude Include="ECS.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Interface\Button.h" />
+    <ClInclude Include="Interface\ButtonMap.h" />
+    <ClInclude Include="Interface\MainCamera.h" />
+    <ClInclude Include="Interface\PauseMenu.h" />
+    <ClInclude Include="Interface\States.h" />
+    <ClInclude Include="Systems\AnimationSystem.h" />
+    <ClInclude Include="Systems\InputSystem.h" />
+    <ClInclude Include="Systems\MovementSystem.h" />
+    <ClInclude Include="Systems\PhysicsSystem.h" />
+    <ClInclude Include="Systems\RenderingSystem.h" />
+    <ClInclude Include="Systems\TileMapSystem.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
